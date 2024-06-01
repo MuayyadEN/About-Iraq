@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Iraq</title>
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 150px auto 0; /* رفع الحاوية قليلاً للأعلى */
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* تلقائياً يتكيف مع حجم الشاشة */
+            gap: 80px;
+            justify-items: center;
+            margin-right: 50px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 300px; /* تقليل ارتفاع الكروت */
+            perspective: 1000px;
+            margin-bottom: 20px; /* مسافة بين الكروت من الأسفل */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card-front {
+            background-color: #fff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .flip-card-back {
+            background-color: #1e3952;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .box:nth-child(odd) .flip-card-front {
+            border: 2px solid #1e3952; /* لون الحدود الأصفر للصناديق الفردية */
+        }
+
+        .box:nth-child(even) .flip-card-front {
+            border: 2px solid #1e3952; /* لون الحدود الأزرق للصناديق الزوجية */
+        }
+
+        .flip-card img {
+            width: 150px; /* توحيد حجم الصور */
+            height: 150px;
+            object-fit: cover; /* لضمان احتواء الصورة بالكامل في هذا الحجم */
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 0 20px;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #f3d89b;
+        }
+
+        .content p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: white;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #1e3952;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            top: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f3d89b;
+            margin-right: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            animation: spin 1s ease-in-out;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Adjust as needed */
+            width: 100%;
+            height: 3px;
+            background-color: #f3d89b;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 50px;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+            position: relative; /* Required for positioning the hover effect */
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+            position: relative; /* Required for positioning the hover effect */
+            z-index: 1;
+        }
+
+        .nav-links li a:hover {
+            color: #f3d89b;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: #f3d89b;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-links li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">
+          <img src="/images/logo.png" alt="Iraq Logo">
+          <span><a href="/index.html"></a>About Iraq</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/ancient-iraq.html">Ancient Iraq</a></li>
+          <li><a href="/modern/modern-iraq.html">Modern Iraq</a></li>
+          <li><a href="/figures/figures.html">Iraqi Figures</a></li>
+          <li><a href="/iraq-facts.html">Facts</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+      </nav>
+
+    <div class="container">
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/lihadh-al-gazali-1.webp" alt="صورة Lihadh Al-Gazali">
+                    <h2 >Lihadh Al-Gazali</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Lihadh_Al-Gazali">Lihadh Al-Gazali</a></h2>
+                        <p>A professor in clinical genetics and paediatrics. Her main area of interest is identifying new inherited disorders in Arab populations clinically and at the molecular level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/th (1).jpeg" alt="صورة Mahdi al-Jawahiri">
+                    <h2>Mahdi al-Jawahiri</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Muhammad_Mahdi_al-Jawahiri">Mahdi al-Jawahiri</a></h2>
+                        <p>Was an Iraqi poet. Considered by many as one of the best and greatest Arabian poets in the 20th century.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/The Life & Architectural Career of Dame Zaha Mohammad Hadid - archisoup.jpeg" alt="صورة Zaha Hadid">
+                    <h2>Zaha Hadid</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Zaha_Hadid">Zaha Hadid</a></h2>
+                        <p>A British-Iraqi architect, artist, and designer, recognized as a major figure in architecture of the late 20th and early 21st centuries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/Zainab Salbi_ Why I cried for Uncle Saddam.jpeg" alt="صورة Zainab Salbi">
+                    <h2>Zainab Salbi</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Zainab_Salbi">Zainab Salbi</a></h2>
+                        <p>Is the Founder of Women for Women International, Author of several books including her latest Freedom is an Inside Job, and EP and Host of Through Her Eyes with Yahoo News and #Me Too, Now What? original series on PBS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/ajerri_001v.jpg" alt="صورة Abdul Jerri">
+                    <h2>Jerri</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Abdul_Jerri">Jerri</a> </h2>
+                        <p>Is an Iraqi American mathematician, most recognized for his contributions to Shannon Sampling Theory, Its Generalizations, Error Analysis, and Historical Reviews.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/th (3).jpeg" alt="صورة Zainab Al-Eqawi">
+                    <h2>Zainab Al-Eqawi</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Zainab_Al-Eqawi">Zainab Al-Eqawi</a></h2>
+                        <p>Is an Iraqi pharmacist, para-athlete and television presenter based in the United Arab Emirates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat the above HTML structure for additional boxes -->
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/c1115cc6-6f8b-4a95-9481-482c70cdf643.jpeg" alt="صورة Layla Al-Attar">
+                    <h2>Al-Attar</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Layla_Al-Attar">Al-Attar</a></h2>
+                        <p>Was an Iraqi artist and painter who became the Director of the Iraqi National Art Museum. Through her art, al-Attar expressed ideals that attempted to recognize the importance of women in all spheres of society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/Mohammed_Ghani_Hikmat_working_on_his_sculpture_Kahramana,_Baghdad,_1969.jpg" alt="صورة Mohammed Ghani Hikmat">
+                    <h2>Mohammed Ghani Hikmat</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Mohammed_Ghani_Hikmat">Mohammed Ghani Hikmat</a></h2>
+                        <p>Iraqi sculptor and artist credited with creating some of Baghdad's highest profile sculptures and monuments. His best known works include the Victory Arch and two statues of Queen Scheherazade and King Shahryar, located on Aby Nuwas Street.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/330px-Ali_Al-Wardi.png" alt="صورة Ali Al-Wardi">
+                    <h2>Ali Al-Wardi</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Ali_Al-Wardi">Ali Al-Wardi</a></h2>
+                        <p>Was an Iraqi social scientist specialized in the field of social history.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/Nadje_staff_page.jpg" alt="صورة Nadje Sadig Al-Ali">
+                    <h2>Nadje Sadig Al-Ali</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Ali_Al-Wardi">Nadje Sadig Al-Ali</a></h2>
+                        <p> Is a German-Iraqi academic of social anthropology and Middle East studies and feminist activist. She is currently the Robert Family Professor of International Studies at Brown University and director of Middle East Studies at Brown's Watson Institute for International and Public Affairs. From 2010 to 2018.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/Ilham_Al_Madfai_in_2005.jpg" alt="صورة Ilham al-Madfai">
+                    <h2>Ilham al-Madfai</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Ilham_al-Madfai">Ilham al-Madfai</a></h2>
+                        <p>Is an Iraqi guitarist, singer and composer. al-Madfai's synthesis of Western guitar stylings with traditional Iraqi music has made him a popular performer in his native country and throughout the Middle East.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card box">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/figures/figures-image/Ammobabaold.jpg" alt="صورة Emmanuel Baba Dawud">
+                    <h2>Emmanuel Baba Dawud</h2>
+                </div>
+                <div class="flip-card-back">
+                    <div class="content">
+                        <h2><a href="https://en.wikipedia.org/wiki/Ammo_Baba">Emmanuel Baba Dawud</a></h2>
+                        <p>better known as Ammo Baba , was an Iraqi Assyrian football player and coach of the Iraq national football team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

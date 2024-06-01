@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Iraq</title>
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Navbar styles */
+        nav {
+            background-color: #1e3952;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            top: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f3d89b;
+            margin-right: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            animation: spin 1s ease-in-out;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px; /* Adjust as needed */
+            width: 100%;
+            height: 3px;
+            background-color: #f3d89b;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 50px;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+            position: relative; /* Required for positioning the hover effect */
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+            position: relative; /* Required for positioning the hover effect */
+            z-index: 1;
+        }
+
+        .nav-links li a:hover {
+            color: #f3d89b;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: #f3d89b;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-links li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .p1 {
+          color:  #1e3952;
+          font-weight: bold;
+          font-size:x-large;
+          margin-top: 100px;
+          margin-left: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .content {
+            text-align: center;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .content video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content p {
+            margin-top: 10px;
+            color:  #1e3952;
+        }
+        .container-1 {
+            display: flex;
+            justify-content: center; /* Center the containers */
+            margin: 20px auto; /* Adjust margin for centering */
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+
+        .content-1 {
+            text-align: center;
+            width: calc(45% - 20px); /* Adjust width */
+            margin-bottom: 20px;
+        }
+
+        .content-1 video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content-1 p {
+            margin-top: 10px;
+            color:  #1e3952;
+        }
+
+        .p2 {
+            text-align: center;
+            color:  #1e3952;
+          font-weight: bold;
+          font-size:x-large;
+
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">
+          <img src="/images/logo.png" alt="Iraq Logo">
+          <span><a href="/index.html"></a>About Iraq</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/ancient-iraq.html">Ancient Iraq</a></li>
+          <li><a href="/modern/modern-iraq.html">Modern Iraq</a></li>
+          <li><a href="/figures/figures.html">Iraqi Figures</a></li>
+          <li><a href="/iraq-facts.html">Facts</a></li>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+      </nav>
+
+      <p class="p1">Ancient Ruins and Archaeological Wonders</p>
+
+      <div class="container">
+        <div class="content">
+            <video src=""></video>
+            <span>Babylon</span>
+            <p>Explore the ancient ruins of the legendary city of Babylon, home to the Hanging Gardens and the Tower of Babel.</p>
+        </div>
+        <div class="content">
+            <img src="https://via.placeholder.com/400x300" alt="Image 2">
+            <span>Ur</span>
+            <p>Visit the archaeological site of Ur, one of the oldest cities in the world and the birthplace of the prophet Abraham.</p>
+        </div>
+        <div class="content">
+            <img src="https://via.placeholder.com/400x300" alt="Image 3">
+            <span>Mosul</span>
+            <p>Discover the rich history and cultural heritage of Mosul, a city with a long and storied past.</p>
+        </div>
+    </div>
+    <p class="p1">Vibrant Cities and Captivating Culture</p>
+
+    <div class="container">
+      <div class="content">
+          <img src="https://via.placeholder.com/400x300" alt="Image 1">
+          <span>Baghdad</span>
+          <p>Explore the bustling markets, historic mosques, and rich culinary traditions of Iraq's capital city.</p>
+      </div>
+      <div class="content">
+          <img src="https://via.placeholder.com/400x300" alt="Image 2">
+          <span>Erbil</span>
+          <p>Discover the ancient citadel of Erbil, a UNESCO World Heritage Site, and immerse yourself in the vibrant Kurdish culture.</p>
+      </div>
+      <div class="content">
+          <img src="https://via.placeholder.com/400x300" alt="Image 3">
+          <span>Basra</span>
+          <p>Discover the port city of Basra, known for its bustling markets, traditional architecture, and delicious seafood.</p>
+      </div>
+    </div>
+
+    <p class="p2">Mesmerizing Natural Landscapes and Serenity</p>
+
+    <div class="container-1">
+      <div class="content-1">
+          <img src="https://via.placeholder.com/400x300" alt="Image 1">
+          <span>The Mesopotamian Marshes</span>
+          <p> 
+            Experience the tranquility of the Mesopotamian Marshes, a unique ecosystem teeming with wildlife, lush vegetation, and traditional floating reed houses.
+          </p>
+        </div>
+      <div class="content-1">
+          <img src="https://via.placeholder.com/400x300" alt="Image 2">
+          <span>The Zagros Mountains</span>
+          <p>
+            Adventure into the Zagros Mountains, offering stunning landscapes, hiking trails, and a glimpse into the life of the mountain-dwelling communities.
+          </p>
+        </div>
+
+  </div>
+      
+
+</body>
+</html>
+
+

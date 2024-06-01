@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iraq Timeline</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: white; /* Background color for the body */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 300px;
+  margin-top: 90px;
+  text-align: center;
+  padding: 2rem;
+  background-image: url('/Ancient Iraq/gettyimages-1982826449-612x612.jpg');
+}
+
+.header h1 {
+  margin-top: 150px;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  margin-top: 0;
+}
+
+.cta-button {
+  display: block;
+  width: max-content;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #1e3952;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #0055bb;
+}
+
+.scroll-box {
+  width: 1200px;
+  height: 550px;
+  margin: 50px auto 0;
+  /* Remove overflow-x property */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  position: relative;
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  border: 5px;
+  border-color: #1e3952;
+}
+
+.scroll-content {
+  display: flex; /* Display items in a row */
+  white-space: nowrap;
+  width: max-content; /* Prevent wrapping */
+}
+
+.scroll-item {
+  display: inline-block; /* Display items inline */
+}
+
+.scroll-item img {
+  width: 600px; /* Set a fixed width for the images */
+  height: 500px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.scroll-item p {
+  text-align: center;
+  color: black; /* Set text color */
+  margin: 10px 0; /* Adjust margin as needed */
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add transition for smoother effect */
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Add hover effect */
+.scroll-btn:hover {
+  transform: scale(1.2); /* Scale up the button on hover */
+}
+
+
+.scroll-box::-webkit-scrollbar {
+  height: 10px; /* Height of the scrollbar */
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Border radius of the thumb */
+}
+
+.scroll-box::-webkit-scrollbar-track {
+  background-color: #eee; /* Color of the scrollbar track */
+  border-radius: 5px; /* Border radius of the track */
+}
+
+.image-with-text {
+  display: flex;
+  align-items: center; /* Center align items vertically */
+}
+
+.image-with-text p {
+  margin-left: 10px; /* Adjust margin as needed */
+  text-align: left;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #1e3952;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f3d89b;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-right: 50px;
+}
+
+.nav-links li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f3d89b;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #f3d89b;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+</style>
+</head>
+<body>
+  <nav class="nav-container">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Iraq Logo">
+      <span>About Iraq</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/ancient-iraq.html">Ancient Iraq</a></li>
+      <li><a href="/modern/modern-iraq.html">Modern Iraq</a></li>
+      <li><a href="/figures/figures.html">Iraqi Figures</a></li>
+      <li><a href="/iraq-facts.html">Facts</a></li>
+      <li><a href="/index.html">Home</a></li>
+    </ul>
+  </nav>
+  <div class="header">
+    <h1>Uncover the Captivating History of Iraq</h1>
+    <p>Explore the rich tapestry of Iraq's past, from ancient civilizations to modern-day triumphs. Immerse yourself in a dynamic timeline that brings the nation's story to life.</p>
+    <a href="/Ancient Iraq/timeline.html" class="cta-button">Explore the Timeline</a>
+  </div>
+
+  <div class="scroll-box">
+    <div class="scroll-content">
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/articale.jpg" alt="Image 1">
+          <p>Sumerian Civilization (circa 3500 BCE - 2300 BCE):<br>
+            The Sumerian civilization is distinguished as the oldest civilization in the world.<br>
+            Images of the city of Ur, the Sumerian ziggurats,<br> and other monumental structures.</p>
+        </div>
+      </div>
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/Babylonian Civilization.jpg" alt="Image 2">
+          <p>Babylonian Civilization (circa 2200 BCE - 630 BCE):<br>
+            Babylon emerged as the capital of the Babylonian Empire,<br> where the famous Tower of Babel was built.<br>
+            Pictures of the ruins of Babylon and prominent Babylonian tombs.</p>
+        </div>
+      </div>
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/gettyimages-1459139125-612x612.jpg" alt="Image 3">
+          <p>Assyrian Empire (circa 1900 BCE - 610 BCE):<br>
+            The Assyrians built a powerful empire in northern Iraq.<br>
+            Images of Assyrian temples, palaces, and inscriptions.</p>
+        </div>
+      </div>
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/articale3.jpg" alt="Image 4">
+          <p>Neo-Babylonian Empire (circa 610 BCE - 535 BCE):<br>
+            Nebuchadnezzar founded the Neo-Babylonian Empire.<br>
+            Photos of the ruins of Babylon during the Neo-Babylonian rule.</p>
+        </div>
+      </div>
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/gettyimages-1485804819-612x612.jpg" alt="Image 5">
+          <p>Islamic Period (640 CE - 20th Century):<br>
+            Iraq was influenced by Islamic conquests and Islamic culture.<br>
+            Pictures of Islamic mosques, shrines, and architecture in Iraq.</p>
+        </div>
+      </div>
+      <div class="scroll-item">
+        <div class="image-with-text">
+          <img src="/Ancient Iraq/gettyimages-1362321028-612x612.jpg" alt="Image 6">
+          <p>Modern Era (20th Century - Present):<br>
+            Iraq witnessed various periods of conflicts and political changes.<br>
+            Images of modern cities and infrastructure in Iraq.</p>
+        </div>
+      </div>
+      <!-- Add more scroll-items as needed -->
+    </div>
+    <button class="scroll-btn prev-btn">&#10094;</button>
+    <button class="scroll-btn next-btn">&#10095;</button>
+  </div>
+
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa harum tempora expedita. Dolor excepturi assumenda vel, totam, blanditiis accusamus optio doloremque ut impedit aperiam placeat fuga, repellendus odit ipsum ad?</p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const scrollContent = document.querySelector(".scroll-content");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  function scrollToNext() {
+    scrollContent.scrollBy({ left: 600, behavior: 'smooth' });
+  }
+
+  function scrollToPrev() {
+    scrollContent.scrollBy({ left: -600, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener("click", scrollToPrev);
+  nextBtn.addEventListener("click", scrollToNext);
+});
+</script>
+</body>
+</html>

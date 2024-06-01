@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Reviews</title>
+<style>
+  body {
+    font-family: 'Amiri', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-color: #f4f4f4;
+  }
+
+  .reviews-container {
+    background-color: #fff;
+    width: 80%;
+    margin: 100px auto 20px; /* Added 80px margin on top to push content below the nav */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  .review-heading {
+    color: #1e3952; /* Yellow color for the heading */
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .review {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-right: 50px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .review:hover {
+    transform: translateY(-10px);
+    opacity: 0.9;
+  }
+
+  .review-text {
+    flex: 1;
+    padding-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+    color: #333;
+  }
+
+  .reviewer-info {
+    text-align: center;
+    position: relative; /* Add this to position the image */
+  }
+
+  .reviewer-name {
+    font-weight: bold;
+  }
+
+  .reviewer-title {
+    color: #777;
+    font-size: 14px;
+  }
+
+  .Anthem {
+    margin-top: 30px;
+    margin-right: 5px;
+  }
+
+  nav {
+    background-color: #1e3952;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f3d89b;
+    margin-right: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    animation: spin 1s ease-in-out;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .logo-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed */
+    width: 100%;
+    height: 3px;
+    background-color: #f3d89b;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 50px;
+  }
+
+  .nav-links li {
+    margin-right: 20px;
+    position: relative; /* Required for positioning the hover effect */
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    position: relative; /* Required for positioning the hover effect */
+    z-index: 1;
+  }
+
+  .nav-links li a:hover {
+    color: #f3d89b;
+  }
+
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #f3d89b;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  .nav-links li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .reviewer-info img {
+    width: 300px;
+    height: 300px;
+    border: 3px solid #1e3952;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .reviewer-info img:hover {
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav-container">
+    <div class="logo">
+      <img src="/images/logo.png" alt="Iraq Logo">
+      <span><a href="/index.html"></a>About Iraq</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/ancient-iraq.html">Ancient Iraq</a></li>
+      <li><a href="/modern/modern-iraq.html">Modern Iraq</a></li>
+      <li><a href="/figures/figures.html">Iraqi Figures</a></li>
+      <li><a href="/iraq-facts.html">Facts</a></li>
+      <li><a href="/index.html">Home</a></li>
+    </ul>
+  </nav>
+
+<div class="reviews-container">
+  <div class="review-heading">General Information</div>
+  <div class="review">
+    <div class="review-text">
+      Iraq, officially known as the Republic of Iraq, is a country in Western Asia, located in the region commonly referred to as the Middle East. It has a rich history and diverse cultural heritage, being home to some of the world's earliest known civilizations. The land that is now Iraq was historically known as Mesopotamia, often called the "Cradle of Civilization," where the Sumerian, Akkadian, Babylonian, and Assyrian empires flourished.
+
+      The modern nation-state of Iraq was created following World War I. Its capital, Baghdad, once served as the capital of the Abbasid Caliphate and became a significant cultural and intellectual center during the Islamic Golden Age.
+
+      Iraq's population is over 46 million, making it the 31st-most populous country. It is a federal parliamentary republic consisting of 19 governorates. The country is diverse in its ethnic makeup, primarily consisting of Arabs and Kurds, with other groups including Turkmen, Assyrians, and Yazidis. The official languages are Arabic and Kurdish, with English also recognized as a co-official language in some contexts.
+
+      Iraq's economy is largely driven by the oil sector, which has been a significant source of revenue and economic activity. However, the country has faced challenges, including political instability, conflicts, and efforts to rebuild and recover from periods of violence and sanctions.
+
+      The country has been a battleground for competing forces, especially since the US-led overthrow of Saddam Hussein in 2003. The mainly Shia-led governments have struggled to maintain order, and the country has seen only brief periods of respite from high levels of sectarian violence.
+
+      Iraq continues to be an important player in the geopolitical landscape of the Middle East, with its history, resources, and strategic location shaping its role in regional and global affairs.
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/zqora.jpg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">Ziggurat</div>
+    </div>
+  </div>
+
+  <div class="review-heading"></div>
+  <div class="review">
+    <div class="review-text">
+      <span style="color: #1e3952; font-size: 24px; text-transform: uppercase;">The Governorates of Iraq: A Mosaic of Heritage and Culture</span>
+      Iraq, a nation with a storied past and a vibrant present, is divided into 18 governorates, each with its own unique identity and history. These governorates range from the vast Al Anbar in the west to the bustling metropolis of Baghdad. They are not just administrative divisions but are also reflective of the country’s diverse cultural and geographical landscape.
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/map.jpeg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">Map of Iraq's governorates</div>
+    </div>
+  </div>
+
+  <div class="review-heading"></div>
+  <div class="review">
+    <div class="review-text">
+      <span style="color: #1e3952; font-size: 24px; text-transform: uppercase;">Baghdad: The Heart of Iraq</span>
+      At the core of these governorates lies Baghdad, the capital city. Founded in the 8th century, Baghdad was once the epicenter of the Islamic Golden Age, where scholars, poets, and artists thrived. Today, it stands as a testament to resilience, rebuilding itself time and again to remain the political, economic, and cultural hub of Iraq.
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/baghdad.jpeg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">Baghdad</div>
+    </div>
+  </div>
+
+  <div class="review-heading"></div>
+  <div class="review">
+    <div class="review-text">
+      <span style="color: #1e3952; font-size: 24px; text-transform: uppercase;">The Tigris and Euphrates: Rivers of Civilization</span>
+      Flowing through the heart of Iraq are the Tigris and Euphrates rivers, cradling the birthplace of civilization. These rivers have been the source of life and prosperity for the region, giving rise to the fertile lands that nurtured the earliest human settlements and empires known to history.
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/rivers.jpg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">Tigris</div>
+    </div>
+  </div>
+
+  <div class="review-heading"></div>
+  <div class="review">
+    <div class="review-text">
+      <span style="color: #1e3952; font-size: 24px; text-transform: uppercase;">The Flag: A Symbol of Unity and Strength</span>
+      Iraq’s flag is a powerful emblem of unity, with its horizontal tricolor of red, white, and black stripes. In the center, the white band bears the Takbir, “Allahu Akbar,” in green Kufic script, symbolizing faith and the nation’s Islamic heritage.
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/flag.jpg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">Iraqi flag</div>
+    </div>
+  </div>
+
+  <div class="review-heading"></div>
+  <div class="review">
+    <div class="review-text">
+      <span style="color: #1e3952; font-size: 24px; text-transform: uppercase;">The National Anthem: A Melody of Homeland and Harmony</span>
+      The national anthem of Iraq, “Mawtini” (My Homeland), is a stirring ode to the country. Adopted in 2004, it is a beloved poem by the Palestinian poet Ibrahim Tuqan, set to music by the Lebanese composer Mohammed Flayfel. It resonates with the Iraqi people’s love for their land and their aspirations for peace and prosperity.<br>
+      <audio class="Anthem" src="/instrumental-national-anthem-Iraq.mp3" controls>The National Anthem</audio>
+    </div>
+    <div class="reviewer-info">
+      <img src="/images/anthem.jpg" alt="Reviewer Image">
+      <div class="reviewer-name" style="color: #1e3952;">from North Iraq</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
