@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Timeline of Iraq</title>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #timeline-embed {
+            width: 100%;
+            height: 600px;
+        }
+        
+/* Navbar styles */
+nav {
+  background-color: #1e3952;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f3d89b;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-right: 50px;
+}
+
+.nav-links li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f3d89b;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #f3d89b;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">
+          <img src="/images/logo.png" alt="Iraq Logo">
+          <span>About Iraq</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/ancient-iraq.html">Ancient Iraq</a></li>
+          <li><a href="/modern/modern-iraq.html">Modern Iraq</a></li>
+          <li><a href="/figures/figures.html">Iraqi Figures</a></li>
+          <li><a href="/iraq-facts.html">Facts</a></li>
+        </ul>
+      </nav>
+    <div id="timeline-embed"></div>
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <script>
+      var timeline_json = {
+    "events": [
+        {
+            "start_date": {
+                "year": "1967",
+                "month": "04",
+                "day": "07"
+            },
+            "text": {
+                "headline": "Opening of Al-Shaab Stadium",
+                "text": "Al-Shaab Stadium, one of the largest and most iconic sports venues in Iraq, is inaugurated in Baghdad."
+            },
+            "media": {
+                "url": "https://media.gettyimages.com/id/88483764/photo/south-africa-v-iraq-fifa-confederations-cup.jpg?s=2048x2048&w=gi&k=20&c=rc6g--o6EiGix2n7AWmwSY1mXirI9VltiLtVbecaohY=", 
+                "caption": "Al-Shaab Stadium",
+                "thumbnail": "https://media.gettyimages.com/id/88483764/photo/south-africa-v-iraq-fifa-confederations-cup.jpg?s=2048x2048&w=gi&k=20&c=rc6g--o6EiGix2n7AWmwSY1mXirI9VltiLtVbecaohY="
+            }
+        },
+        {
+            "start_date": {
+                "year": "1979",
+                "month": "03",
+                "day": "01"
+            },
+            "text": {
+                "headline": "Iraq National Museum Reopens",
+                "text": "The Iraq National Museum in Baghdad reopens with extensive collections of Mesopotamian artifacts, highlighting Iraq's rich cultural heritage."
+            },
+            "media": {
+                "url": "https://media.gettyimages.com/id/1066051188/photo/iraq-culture-museum-history.jpg?s=2048x2048&w=gi&k=20&c=6gP-vURcAVY0ySqnjxx1rssEw8jtgkyxuCRdAEJj36A=",
+                "caption": "Iraq National Museum",
+                "thumbnail": "https://media.gettyimages.com/id/1066051188/photo/iraq-culture-museum-history.jpg?s=2048x2048&w=gi&k=20&c=6gP-vURcAVY0ySqnjxx1rssEw8jtgkyxuCRdAEJj36A="
+            }
+        },
+        {
+            "start_date": {
+                "year": "2011",
+                "month": "06",
+                "day": "23"
+            },
+            "text": {
+                "headline": "Iraq Wins AFC Asian Cup",
+                "text": "The Iraqi national football team wins the AFC Asian Cup, bringing joy and pride to the nation."
+            },
+            "media": {
+                "url": "https://media.gettyimages.com/id/462001084/photo/quarter-final-2015-asian-cup.jpg?s=2048x2048&w=gi&k=20&c=uVGN1faQtCxZm47jNItj8KQ93vM2spqQkpTkzU2Ql_Q=",
+                "caption": "Iraqi national football team celebrating",
+                "thumbnail": "https://media.gettyimages.com/id/462001084/photo/quarter-final-2015-asian-cup.jpg?s=2048x2048&w=gi&k=20&c=uVGN1faQtCxZm47jNItj8KQ93vM2spqQkpTkzU2Ql_Q="
+            }
+        },
+        {
+            "start_date": {
+                "year": "2015",
+                "month": "04",
+                "day": "05"
+            },
+            "text": {
+                "headline": "Opening of Basra Sports City",
+                "text": "Basra Sports City, a major sports complex in Iraq, opens, providing state-of-the-art facilities for various sports."
+            },
+            "media": {
+                "url": "https://media.gettyimages.com/id/1245944306/photo/fbl-iraq-arabian-gulf-cup.jpg?s=2048x2048&w=gi&k=20&c=1S9GsvueirEXQ_vJkuPZRW68j7yrnqruxnChseXk7j8=",
+                "caption": "Basra Sports City",
+                "thumbnail": "https://media.gettyimages.com/id/1245944306/photo/fbl-iraq-arabian-gulf-cup.jpg?s=2048x2048&w=gi&k=20&c=1S9GsvueirEXQ_vJkuPZRW68j7yrnqruxnChseXk7j8="
+            }
+        }
+    ]
+};
+
+window.timeline = new TL.Timeline('timeline-embed', timeline_json);
+
+    </script>
+</body>
+</html>
