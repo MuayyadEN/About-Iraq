@@ -18,11 +18,11 @@ body, html {
   margin: 0;
   font-weight: bold;
   font-size: 18px;
-  color: #1e3952; /* Matching navigation bar color */
+  color: #1e3952;
 }
 
 .social-share a {
-  color: #1e3952; /* Matching navigation bar color */
+  color: #1e3952;
   background-color: #fff;
   padding: 10px;
   border-radius: 50%;
@@ -32,11 +32,10 @@ body, html {
 }
 
 .social-share a:hover {
-  background-color:#1e3952; /* Matching navigation bar color */
+  background-color: #1e3952;
   color: #fff;
-  transform: scale(1.1); /* Animation */
+  transform: scale(1.1);
 }
-
 
 /* Navbar styles */
 nav {
@@ -130,46 +129,45 @@ nav {
 /* Hero section styles */
 .hero {
   position: relative;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding-top: 80px;
+  text-align: center;
 }
 
-.slideshow-container {
+.hero .slideshow-container {
   max-width: 100%;
   position: relative;
-  overflow: hidden;
-  height: 600px;
+  margin: auto;
 }
 
 .mySlides {
   display: none;
-}
-
-.mySlides img {
   width: 100%;
-  height: auto;
 }
 
 .prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 16px;
+  margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  cursor: pointer;
-}
-
-.prev {
-  left: 0;
+  user-select: none;
 }
 
 .next {
   right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
@@ -181,68 +179,58 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 600px;
-  padding: 20px;
+  text-align: center;
 }
 
 .intro h1 {
-  font-size: 36px;
+  font-size: 3em;
   margin-bottom: 20px;
 }
 
 .intro p {
-  font-size: 18px;
+  font-size: 1.5em;
   margin-bottom: 30px;
 }
 
 .intro a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #f3d89b;
+  color: #1e3952;
   text-decoration: none;
-  font-size: 18px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .intro a:hover {
-  background-color: #f0f0f0;
+  background-color: #1e3952;
+  color: #f3d89b;
 }
 
-/* Governorates section styles */
-.Governorates {
-  margin-top: 50px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
+/* Image container styles */
 .image-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  margin: 50px 0;
 }
 
 .image-container figure {
-  width: 300px;
   margin: 0;
   text-align: center;
 }
 
 .image-container img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-figcaption {
-  font-style: italic;
-  color: #666;
+.image-container img:hover {
+  transform: scale(1.05);
 }
 
-/* Google Maps iframe styles */
 .map {
   width: calc(100% - 40px);
   height: 500px;
@@ -320,9 +308,7 @@ body {
   opacity: 1;
 }
 
-
-/* Start of CSS Coding... */
-
+/* Font imports */
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
 
 * {

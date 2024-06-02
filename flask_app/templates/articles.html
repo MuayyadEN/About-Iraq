@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Iraq Logo">
+            <span>About Iraq</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('article') }}">Post Article</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Articles</h1>
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
